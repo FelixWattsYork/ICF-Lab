@@ -163,9 +163,11 @@ def fixed_param_curve_fit(func, xdata, ydata, guesses, fixes):
 	return totpopt, pcov
 	
 			
-def fit_plot(xdata, ydata, fitdata, xl="", yl="",title=""):
+def fit_plot(xdata, ydata, fitdata, xl="", yl="",title="",width = 0):
 
+	position_ymax = np.argmax(fitdata)
 	f, axarr = plt.subplots(2, sharex=True)
+	axarr[0].set_title(title)
 	axarr[1].plot(xdata, ydata, lw=2, label="Data")
 	axarr[1].plot(xdata, fitdata, lw=2, label="Fit")
 	axarr[1].legend()
@@ -174,8 +176,6 @@ def fit_plot(xdata, ydata, fitdata, xl="", yl="",title=""):
 	axarr[0].plot(xdata, ydata-fitdata, lw=2, label="Residual") 				
 	axarr[0].yaxis.tick_right()
 	axarr[0].set_ylabel("Residual")
-
 	f.subplots_adjust(hspace=0)
-	plt.title(title)
 	plt.show()
 
