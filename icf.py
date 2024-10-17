@@ -163,7 +163,7 @@ def fixed_param_curve_fit(func, xdata, ydata, guesses, fixes):
 	return totpopt, pcov
 	
 			
-def fit_plot(xdata, ydata, fitdata, xl="", yl="",title = ""):
+def fit_plot(xdata, ydata, fitdata, xl="", yl="",title=""):
 
 	f, axarr = plt.subplots(2, sharex=True)
 	axarr[1].plot(xdata, ydata, lw=2, label="Data")
