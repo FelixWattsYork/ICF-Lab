@@ -163,7 +163,7 @@ def fixed_param_curve_fit(func, xdata, ydata, guesses, fixes):
 	return totpopt, pcov
 	
 			
-def fit_plot(xdata, ydata, fitdata, xl="", yl=""):
+def fit_plot(xdata, ydata, fitdata, xl="", yl="",title = ""):
 
 	f, axarr = plt.subplots(2, sharex=True)
 	axarr[1].plot(xdata, ydata, lw=2, label="Data")
@@ -175,7 +175,7 @@ def fit_plot(xdata, ydata, fitdata, xl="", yl=""):
 	axarr[0].yaxis.tick_right()
 	axarr[0].set_ylabel("Residual")
 
-
 	f.subplots_adjust(hspace=0)
+	plt.title(title)
 	plt.show()
 
